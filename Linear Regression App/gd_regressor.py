@@ -14,6 +14,8 @@ class BGD_Regressor:
         self.intercept_ = None
 
     def fit(self, X, y):
+        X = X.values
+        y = y.values
         # initialize the weights and intercept
         self.intercept_ = 0
         self.coef_ = np.ones(shape=X.shape[1])
@@ -34,6 +36,7 @@ class BGD_Regressor:
             self.coef_ = self.coef_ - (self.learning_rate * coef_der)
 
     def predict(self, X):
+        X = X.values
         y_pred = np.dot(X, self.coef_) + self.intercept_
         return y_pred
 
@@ -55,6 +58,8 @@ class SGD_Regressor:
         self.intercept_ = None
 
     def fit(self, X, y):
+        X = X.values
+        y = y.values
         # initialize the weights and intercept
         self.intercept_ = 0
         self.coef_ = np.ones(shape=X.shape[1])
@@ -80,6 +85,7 @@ class SGD_Regressor:
                 self.coef_ = self.coef_ - (self.learning_rate * coef_der)
 
     def predict(self, X):
+        X = X.values
         y_pred = np.dot(X, self.coef_) + self.intercept_
         return y_pred
 
@@ -100,6 +106,8 @@ class MBGD_Regressor:
         self.intercept_ = None
 
     def fit(self, X, y):
+        X = X.values
+        y = y.values
         # initialize the weights and intercept
         self.intercept_ = 0
         self.coef_ = np.ones(shape=X.shape[1])
@@ -126,6 +134,7 @@ class MBGD_Regressor:
                 self.coef_ = self.coef_ - (self.learning_rate * coef_der)
 
     def predict(self, X):
+        X = X.values
         y_pred = np.dot(X, self.coef_) + self.intercept_
         return y_pred
 
