@@ -10,7 +10,7 @@ df = pd.read_csv('cleaned_data.csv')
 df.set_index('date',inplace=True)
 
 # title for the app
-st.title('')
+st.title('Oil Well Operation Parameters (2013-2021), Siberia, Russia')
 
 # sidebar title
 st.sidebar.title("Time Series Analysis")
